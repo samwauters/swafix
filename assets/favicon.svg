@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&amp;display=swap');
+      .sf-text {
+        font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+        font-weight: 800;
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#FF7A59" />
+  <text x="32" y="41" class="sf-text" font-size="34" text-anchor="middle">SF</text>
+</svg>

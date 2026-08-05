@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWA FIX | Zorgeloze IT, Laptop Support & Smart Home in Puurs-Sint-Amands</title>
+    <meta name="description" content="SWA FIX biedt zorgeloze IT-ondersteuning, laptop- & pc-installaties, smartphone assistentie, cloud back-ups en smart home oplossingen in Puurs-Sint-Amands. Geen jargon, wel resultaat.">
+    <meta name="keywords" content="IT ondersteuning, computer installatie, laptop support, smartphone hulp, cloud backup, smart home, webdesign, Puurs-Sint-Amands, Klein-Brabant, Swa Fix">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SWA FIX">
+    <meta name="geo.region" content="BE-VAN">
+    <meta name="geo.placename" content="Puurs-Sint-Amands">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.swafix.be/">
+
+    <!-- Open Graph / Social Media (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SWA FIX">
+    <meta property="og:title" content="SWA FIX | Zorgeloze IT, Laptop Support & Smart Home">
+    <meta property="og:description" content="Persoonlijke IT-hulp aan huis zonder technisch jargon. Laptops, smartphones, back-ups en smart home oplossingen in Puurs-Sint-Amands.">
+    <meta property="og:url" content="https://www.swafix.be/">
+    <meta property="og:image" content="https://www.swafix.be/assets/swafix_logo.png">
+    <meta property="og:locale" content="nl_BE">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SWA FIX | Zorgeloze IT-hulp & Laptop Support">
+    <meta name="twitter:description" content="Geen technisch jargon, wel heldere oplossingen voor jouw laptop, pc, smartphone en netwerk.">
+    <meta name="twitter:image" content="https://www.swafix.be/assets/swafix_logo.png">
+
+    <!-- Structured Data (JSON-LD for Google Local Business & Search Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SWA FIX",
+      "image": "https://www.swafix.be/assets/swafix_logo.png",
+      "description": "Zorgeloze IT-ondersteuning, laptop & computer installaties, smartphone assistentie en smart home oplossingen in Puurs-Sint-Amands.",
+      "url": "https://www.swafix.be/",
+      "telephone": "+32479851164",
+      "email": "info@swafix.be",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Winkelstraat 37/A1",
+        "addressLocality": "Puurs-Sint-Amands",
+        "postalCode": "2890",
+        "addressCountry": "BE"
+      },
+      "areaServed": ["Puurs-Sint-Amands", "Bornem", "Buggenhout", "Dendermonde"],
+      "priceRange": "€€"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Google Fonts: Poppins for headings, Nunito for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        theme: {
+                            base: '#FFFAF3',    // Warm off-white background
+                            dark: '#2D3142',    // Soft dark blue/grey for text
+                            primary: '#FF7A59', // Vibrant coral/orange
+                            secondary: '#4F9D9D',// Calming teal
+                            light: '#E2F0F0',   // Light teal for backgrounds
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(45, 49, 66, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Nunito', sans-serif; color: #2D3142; background-color: #FFFAF3; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Poppins', sans-serif; }
+        
+        /* Organic blob shapes for background decoration */
+        .blob-bg {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.4;
+            filter: blur(40px);
+            border-radius: 50%;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background-color: #4F9D9D; }
+        .blob-2 { bottom: 10%; right: -5%; width: 40vw; height: 40vw; background-color: #FF7A59; opacity: 0.15; }
+        
+        /* Custom image masking for a softer look */
+        .img-mask {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(79, 157, 157, 0.2);
+            transition: all 0.5s ease;
+        }
+        .img-mask:hover {
+            border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+            transform: translateY(-5px);
+        }
+        
+        /* Zweef animatie voor de contact knoppen */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .float-1 { animation: float 4s ease-in-out infinite; }
+        .float-2 { animation: float 5s ease-in-out infinite 1s; }
+        .float-3 { animation: float 4.5s ease-in-out infinite 2s; }
+    </style>
+</head>
+<body class="relative overflow-x-hidden antialiased selection:bg-theme-secondary selection:text-white">
+
+    <!-- Background Decoration -->
+    <div class="blob-bg blob-1"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-theme-base/90 backdrop-blur-lg border-b border-theme-secondary/10 transition-all duration-300" id="navbar">
+        <!-- Top Announcement Bar -->
+        <div class="bg-theme-primary text-white text-center py-2 px-4 text-xs sm:text-sm font-bold tracking-wide flex items-center justify-center gap-2 shadow-inner">
+            <span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse shrink-0"></span>
+            <span>⚡ Actief vanaf november 2026 — Vragen of afspraken nu al welkom!</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group relative z-10">
+                    <div class="w-10 h-10 bg-theme-primary rounded-xl rotate-3 group-hover:-rotate-3 transition-transform flex items-center justify-center shadow-lg shadow-theme-primary/30">
+                        <span class="font-heading font-bold text-white text-lg">SF</span>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-2xl tracking-tight text-theme-dark leading-none">Swa Fix</span>
+                        <span class="block text-[0.65rem] font-bold text-theme-secondary uppercase tracking-wider">No Stress IT</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8 bg-white/50 px-8 py-3 rounded-full border border-white shadow-soft">
+                    <a href="#home" class="text-theme-dark hover:text-theme-primary font-bold text-sm uppercase tracking-wide transition-colors">Home</a>
+                    <a href="#diensten" class="text-theme-dark hover:text-theme-primary font-bold text-sm uppercase tracking-wide transition-colors">Diensten</a>
+                    <a href="#berekening" class="text-theme-dark hover:text-theme-primary font-bold text-sm uppercase tracking-wide transition-colors">Richtprijs</a>
+                    <a href="#waarom" class="text-theme-dark hover:text-theme-primary font-bold text-sm uppercase tracking-wide transition-colors">Waarom ons?</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-theme-dark hover:bg-black text-white px-6 py-3 rounded-2xl font-heading font-bold text-sm transition-all shadow-lg hover:-translate-y-0.5">
+                        Neem Contact Op
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden relative z-10 text-theme-dark p-2 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-theme-base border-b border-theme-secondary/10 shadow-xl pb-6 pt-2">
+            <div class="flex flex-col items-center gap-4 px-6">
+                <a href="#home" class="text-xl font-heading font-bold text-theme-dark w-full text-center py-2">Home</a>
+                <a href="#diensten" class="text-xl font-heading font-bold text-theme-dark w-full text-center py-2">Diensten</a>
+                <a href="#berekening" class="text-xl font-heading font-bold text-theme-dark w-full text-center py-2">Richtprijs</a>
+                <a href="#waarom" class="text-xl font-heading font-bold text-theme-dark w-full text-center py-2">Waarom</a>
+                <a href="#contact" class="mt-4 w-full text-center bg-theme-primary text-white py-3 rounded-xl font-bold">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="home" class="relative pt-36 pb-20 lg:pt-52 lg:pb-32 z-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <!-- Launch Date Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-theme-primary/10 border border-theme-primary/30 text-theme-primary font-bold text-xs uppercase tracking-wider mb-6 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-theme-primary animate-ping shrink-0"></span>
+                        <span>Actief vanaf november 2026</span>
+                    </div>
+
+                    <h1 class="text-4xl lg:text-6xl font-heading font-black text-theme-dark mb-6 leading-[1.1]">
+                        Jouw technologie, <br />
+                        <span class="text-theme-primary relative inline-block">
+                            zorgeloos geregeld.
+                            <!-- Decorative underline -->
+                            <svg class="absolute w-full h-4 -bottom-1 left-0 text-theme-secondary/30" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="none"/></svg>
+                        </span>
+                    </h1>
+                    
+                    <div class="text-lg text-theme-dark/80 mb-10 max-w-lg mx-auto lg:mx-0 font-medium leading-relaxed space-y-4">
+                        <p class="font-bold text-theme-dark text-xl">Van dagelijkse IT tot slimme automatisatie.</p>
+                        <p>Of het nu gaat om de installatie van je apparaten, veilige cloud back-ups, smart home systemen of een professionele website: Swa Fix zorgt dat alles naadloos werkt.</p>
+                        <p>Geen technisch jargon, maar heldere oplossingen en een persoonlijke aanpak, zodat jij 100% stressvrij blijft.</p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#contact" class="w-full sm:w-auto bg-theme-primary hover:bg-[#F26A4A] text-white px-8 py-4 rounded-2xl font-heading font-bold text-lg transition-transform hover:-translate-y-1 shadow-lg shadow-theme-primary/30 flex items-center justify-center gap-3">
+                            Maak een afspraak
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                        <a href="#diensten" class="w-full sm:w-auto bg-white hover:bg-theme-light text-theme-dark border-2 border-theme-light px-8 py-4 rounded-2xl font-heading font-bold text-lg transition-colors flex items-center justify-center">
+                            Bekijk diensten
+                        </a>
+                    </div>
+
+                    <!-- Strakke Apparaten & IT Balk -->
+                    <div class="mt-10 pt-6 border-t border-theme-secondary/20 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm font-bold text-theme-dark/80">
+                        <div class="flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-theme-primary/10 text-theme-primary flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <span>Laptop & PC</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-theme-secondary/10 text-theme-secondary flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <span>Smartphone & Tablet</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-theme-primary/10 text-theme-primary flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                            </div>
+                            <span>Printers & Backup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual / Image -->
+                <div class="w-full lg:w-1/2 relative">
+                    <!-- Decorative element behind image -->
+                    <div class="absolute inset-0 bg-theme-secondary/20 rounded-full blur-3xl transform translate-x-10 translate-y-10"></div>
+                    
+                    <!-- Persoonlijke foto in organische vorm -->
+                    <div class="relative w-full max-w-md mx-auto aspect-square img-mask border-8 border-white shadow-xl bg-theme-light z-10">
+                        <img src="Linkedin_sam.PNG" alt="Sam Wauters - IT Specialist bij SWA FIX in Puurs-Sint-Amands" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Subtiele Badge onderaan de foto -->
+                    <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-6 py-3 rounded-full shadow-lg border border-theme-light flex items-center gap-3 whitespace-nowrap z-20">
+                        <div class="flex items-center gap-1.5 text-theme-primary">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <svg class="w-5 h-5 text-theme-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="font-heading font-bold text-sm text-theme-dark">Persoonlijke IT-hulp aan huis</span>
+                    </div>
+
+                    <!-- Zwevende Contact Knoppen -->
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/32479851164" target="_blank" rel="noopener noreferrer" class="absolute -right-2 md:-right-6 top-8 float-2 bg-[#25D366] hover:bg-[#20bd5a] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 group z-20">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                        </svg>
+                        <span class="absolute -bottom-10 bg-theme-dark text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
+                    </a>
+
+                    <!-- Bellen -->
+                    <a href="tel:+32479851164" class="absolute -right-4 md:-right-8 bottom-16 float-2 bg-theme-primary hover:bg-[#F26A4A] w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 group z-20">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <span class="absolute -bottom-10 bg-theme-dark text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Bel direct</span>
+                    </a>
+
+                    <!-- E-mail -->
+                    <a href="mailto:info@swafix.be" class="absolute -left-2 md:-left-6 bottom-24 float-3 bg-theme-secondary hover:bg-[#3E7D7D] w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 group z-20">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="absolute -bottom-10 bg-theme-dark text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Stuur E-mail</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Diensten Sectie -->
+    <section id="diensten" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-heading font-black text-4xl lg:text-5xl text-theme-dark mb-6">Hoe wij jou helpen</h2>
+                <p class="text-lg text-theme-dark/70">Geen technisch jargon, maar heldere oplossingen.<br>Wij lossen het op, jij kunt weer verder.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Categorie 1: PC & Laptop Support -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-theme-light group flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-theme-primary/10 text-theme-primary rounded-2xl flex items-center justify-center shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-theme-dark leading-tight">PC & Laptop<br>Support</h3>
+                    </div>
+                    <p class="text-theme-dark/70 text-sm mb-6">Gebruiksklaar maken, opschonen en problemen oplossen aan jouw computer.</p>
+                    <ul class="space-y-3 mb-6 flex-grow text-sm">
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Gebruiksklaar maken</span>
+                            <strong class="text-theme-primary">vanaf € 75</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Gegevens overzetten</span>
+                            <strong class="text-theme-primary">vanaf € 45</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Computer sneller maken</span>
+                            <strong class="text-theme-primary">vanaf € 75</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium">
+                            <span>Problemen & foutmeldingen</span>
+                            <strong class="text-theme-primary">€ 55 /u</strong>
+                        </li>
+                    </ul>
+                    <div class="pt-4 border-t border-theme-light mt-auto">
+                        <a href="#berekening" class="inline-flex items-center gap-2 text-theme-primary font-bold hover:text-[#F26A4A] transition-colors uppercase tracking-wide text-xs">
+                            Bereken richtprijs
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categorie 2: Smartphone Support -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-theme-light group flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-theme-secondary/10 text-theme-secondary rounded-2xl flex items-center justify-center shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-theme-dark leading-tight">Smartphone<br>Support</h3>
+                    </div>
+                    <p class="text-theme-dark/70 text-sm mb-6">Instellen, gegevens overzetten, back-ups en WhatsApp instellen op je smartphone.</p>
+                    <ul class="space-y-3 mb-6 flex-grow text-sm">
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Volledig instellen & overzetten</span>
+                            <strong class="text-theme-primary">vanaf € 65</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Back-up (Drive / iCloud)</span>
+                            <strong class="text-theme-primary">vanaf € 35</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium">
+                            <span>Smartphone hulp aan huis</span>
+                            <strong class="text-theme-primary">€ 55 /u</strong>
+                        </li>
+                    </ul>
+                    <div class="pt-4 border-t border-theme-light mt-auto">
+                        <a href="#berekening" class="inline-flex items-center gap-2 text-theme-primary font-bold hover:text-[#F26A4A] transition-colors uppercase tracking-wide text-xs">
+                            Bereken richtprijs
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categorie 3: Printer & Wifi -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-theme-light group flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-theme-primary/10 text-theme-primary rounded-2xl flex items-center justify-center shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-theme-dark leading-tight">Printer &<br>Wi-Fi</h3>
+                    </div>
+                    <p class="text-theme-dark/70 text-sm mb-6">Zorgeloos draadloos printen en het oplossen van internet- & Wi-Fi storingen.</p>
+                    <ul class="space-y-3 mb-6 flex-grow text-sm">
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Printer installeren & koppelen</span>
+                            <strong class="text-theme-primary">€ 45</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium">
+                            <span>Wi-Fi problemen oplossen</span>
+                            <strong class="text-theme-primary">€ 55 /u</strong>
+                        </li>
+                    </ul>
+                    <div class="pt-4 border-t border-theme-light mt-auto">
+                        <a href="#berekening" class="inline-flex items-center gap-2 text-theme-primary font-bold hover:text-[#F26A4A] transition-colors uppercase tracking-wide text-xs">
+                            Bereken richtprijs
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categorie 4: Slimme Woning & Home Assistant -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-theme-light group flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-theme-secondary/10 text-theme-secondary rounded-2xl flex items-center justify-center shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-theme-dark leading-tight">Slimme Woning &<br>Home Assistant</h3>
+                    </div>
+                    <p class="text-theme-dark/70 text-sm mb-6">Domotica, Home Assistant opzet, slimme camera's, verlichting & Smart TV.</p>
+                    <ul class="space-y-3 mb-6 flex-grow text-sm">
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Home Assistant installatie</span>
+                            <strong class="text-theme-primary">vanaf € 200</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Slimme camera installeren</span>
+                            <strong class="text-theme-primary">vanaf € 75</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Slimme verlichting / TV</span>
+                            <strong class="text-theme-primary">vanaf € 35</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium">
+                            <span>Home Assistant problemen</span>
+                            <strong class="text-theme-primary">€ 55 /u</strong>
+                        </li>
+                    </ul>
+                    <div class="pt-4 border-t border-theme-light mt-auto">
+                        <a href="#berekening" class="inline-flex items-center gap-2 text-theme-primary font-bold hover:text-[#F26A4A] transition-colors uppercase tracking-wide text-xs">
+                            Bereken richtprijs
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categorie 5: Software, Cloud & Data -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-theme-light group flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-theme-primary/10 text-theme-primary rounded-2xl flex items-center justify-center shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-theme-dark leading-tight">Software, Cloud<br>& Data</h3>
+                    </div>
+                    <p class="text-theme-dark/70 text-sm mb-6">Accounts instellen, cloud opslag synchroniseren en software installaties.</p>
+                    <ul class="space-y-3 mb-6 flex-grow text-sm">
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Google / Microsoft account</span>
+                            <strong class="text-theme-primary">€ 35</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Cloudopslag (Drive/iCloud)</span>
+                            <strong class="text-theme-primary">€ 55</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Apparaten synchroniseren</span>
+                            <strong class="text-theme-primary">€ 55</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium">
+                            <span>Software installeren</span>
+                            <strong class="text-theme-primary">vanaf € 25</strong>
+                        </li>
+                    </ul>
+                    <div class="pt-4 border-t border-theme-light mt-auto">
+                        <a href="#berekening" class="inline-flex items-center gap-2 text-theme-primary font-bold hover:text-[#F26A4A] transition-colors uppercase tracking-wide text-xs">
+                            Bereken richtprijs
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categorie 6: Webdesign & Hosting -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-theme-light group flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-theme-secondary/10 text-theme-secondary rounded-2xl flex items-center justify-center shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-theme-dark leading-tight">Webdesign<br>& Hosting</h3>
+                    </div>
+                    <p class="text-theme-dark/70 text-sm mb-6">Professionele website, domeinnaam, e-mail en onderhoud voor jouw zaak.</p>
+                    <ul class="space-y-3 mb-6 flex-grow text-sm">
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Nieuwe basiswebsite</span>
+                            <strong class="text-theme-primary">vanaf € 450</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium pb-2 border-b border-theme-light/60">
+                            <span>Domeinnaam & hosting setup</span>
+                            <strong class="text-theme-primary">vanaf € 50</strong>
+                        </li>
+                        <li class="flex items-center justify-between text-theme-dark font-medium">
+                            <span>Website onderhoud</span>
+                            <strong class="text-theme-primary">vanaf € 15 /m</strong>
+                        </li>
+                    </ul>
+                    <div class="pt-4 border-t border-theme-light mt-auto">
+                        <a href="#berekening" class="inline-flex items-center gap-2 text-theme-primary font-bold hover:text-[#F26A4A] transition-colors uppercase tracking-wide text-xs">
+                            Bereken richtprijs
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Indicatieve Prijs & Service Berekening (Multi-Select Simulator) -->
+    <section id="berekening" class="py-20 bg-theme-base relative z-10 border-t border-theme-light">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-theme-primary font-bold text-xs uppercase tracking-widest block mb-2">Transparante Service</span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-theme-dark mb-4">Bereken je richtprijs</h2>
+                <p class="text-theme-dark/70 text-base">Selecteer een of meerdere diensten om direct een totaaloverzicht en richtprijs te berekenen.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 md:p-10 shadow-soft border border-theme-light space-y-8">
+                
+                <!-- Filter & Type Afspraak Controls -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 bg-theme-base/60 rounded-2xl border border-theme-light">
+                    <div>
+                        <label class="block font-heading font-bold text-theme-dark text-xs uppercase tracking-wider mb-2">Filter op categorie</label>
+                        <select id="est-cat-filter" class="w-full bg-white border border-theme-light rounded-xl px-4 py-2.5 text-theme-dark font-medium text-sm focus:ring-2 focus:ring-theme-primary outline-none transition-all">
+                            <option value="all">Alle diensten tonen</option>
+                            <option value="laptop">PC & Laptop Support</option>
+                            <option value="smartphone">Smartphone Support</option>
+                            <option value="printer">Printer & Wi-Fi</option>
+                            <option value="smarthome">Slimme Woning & Home Assistant</option>
+                            <option value="software">Software, Cloud & Data</option>
+                            <option value="webdesign">Webdesign & Hosting</option>
+                            <option value="digihulp">Digitale Hulp aan Huis (€55/u)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-heading font-bold text-theme-dark text-xs uppercase tracking-wider mb-2">Type Afspraak & Spoed</label>
+                        <select id="est-speed" class="w-full bg-white border border-theme-light rounded-xl px-4 py-2.5 text-theme-dark font-medium text-sm focus:ring-2 focus:ring-theme-primary outline-none transition-all">
+                            <option value="standard">Standaard (binnen 5 werkdagen)</option>
+                            <option value="express">Snelle afspraak (binnen 48u) (+30%)</option>
+                            <option value="emergency">Spoedinterventie (direct / zelfde dag) (+60%)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Multi-select Checkbox Grid -->
+                <div>
+                    <label class="block font-heading font-bold text-theme-dark text-sm mb-3">Vink je gewenste diensten aan:</label>
+                    <div id="services-checkbox-container" class="grid grid-cols-1 md:grid-cols-2 gap-3.5 max-h-[420px] overflow-y-auto pr-1">
+                        <!-- Dynamic Checkbox Cards -->
+                    </div>
+                </div>
+
+                <!-- Overzicht van Geselecteerde Diensten Badges -->
+                <div class="pt-4 border-t border-theme-light">
+                    <span class="block text-xs font-bold uppercase tracking-wider text-theme-dark/60 mb-2">Geselecteerde opties:</span>
+                    <div id="est-selected-list" class="flex flex-wrap gap-2 min-h-[32px] items-center">
+                        <!-- Badges dynamically rendered -->
+                    </div>
+                </div>
+
+                <!-- Resultaat Box -->
+                <div class="bg-theme-light/60 rounded-2xl p-6 border border-theme-secondary/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <span class="block text-xs font-bold text-theme-secondary uppercase tracking-wider mb-1">Geschatte Totaalprijs</span>
+                        <div class="flex items-baseline gap-3">
+                            <span id="est-price-val" class="font-heading font-black text-4xl text-theme-primary">€75</span>
+                            <span class="text-xs text-theme-dark/60 font-medium">(inclusief BTW & diagnose)</span>
+                        </div>
+                        <p class="text-xs text-theme-dark/70 mt-1">Verwachte servicetijd: <strong id="est-time-val" class="text-theme-dark">Binnen 5 werkdagen</strong></p>
+                    </div>
+
+                    <a id="est-send-request-btn" href="#contact" class="w-full sm:w-auto bg-theme-primary hover:bg-[#F26A4A] text-white px-6 py-3.5 rounded-xl font-heading font-bold text-sm transition-transform hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
+                        Stuur aanvraag met geselecteerde opties
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hoe Wij Werken (Stappenplan) -->
+    <section class="py-20 bg-theme-light/40 relative z-10 border-t border-theme-light">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-theme-secondary font-bold text-xs uppercase tracking-widest block mb-2">Eenvoudig & Transparant</span>
+                <h2 class="font-heading font-black text-4xl lg:text-5xl text-theme-dark mb-4">In 3 stappen zorgeloos geholpen</h2>
+                <p class="text-lg text-theme-dark/70">Geen ingewikkelde procedures of wachttijden, maar een heldere werkwijze van begin tot eind.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Stap 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-theme-light relative flex flex-col items-center text-center group hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-theme-primary text-white font-heading font-black text-2xl flex items-center justify-center mb-6 shadow-md shadow-theme-primary/20">1</div>
+                    <h3 class="font-heading font-bold text-2xl text-theme-dark mb-3">Neem contact op</h3>
+                    <p class="text-theme-dark/70 text-sm leading-relaxed">Stuur een bericht via het formulier, e-mail of WhatsApp. Leg in je eigen woorden uit wat het probleem of je vraag is.</p>
+                </div>
+
+                <!-- Stap 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-theme-light relative flex flex-col items-center text-center group hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-theme-secondary text-white font-heading font-black text-2xl flex items-center justify-center mb-6 shadow-md shadow-theme-secondary/20">2</div>
+                    <h3 class="font-heading font-bold text-2xl text-theme-dark mb-3">Duidelijke afspraak</h3>
+                    <p class="text-theme-dark/70 text-sm leading-relaxed">We bespreken de oplossing en plannen een moment in dat voor jou past. Je weet vooraf precies wat de aanpak is.</p>
+                </div>
+
+                <!-- Stap 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-theme-light relative flex flex-col items-center text-center group hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-theme-dark text-white font-heading font-black text-2xl flex items-center justify-center mb-6 shadow-md">3</div>
+                    <h3 class="font-heading font-bold text-2xl text-theme-dark mb-3">Zorgeloos geregeld</h3>
+                    <p class="text-theme-dark/70 text-sm leading-relaxed">Ik los het probleem op of stel je apparaten in. Ik leg alles in mensentaal uit zodat jij weer 100% verder kunt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waarom Swa Fix -->
+    <section id="waarom" class="py-20 z-10 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="bg-theme-secondary rounded-[3rem] p-10 md:p-16 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden shadow-2xl shadow-theme-secondary/20">
+                
+                <!-- Deco -->
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white opacity-10 rounded-full blur-3xl"></div>
+
+                <div class="w-full md:w-1/2 z-10 text-white">
+                    <h2 class="font-heading font-black text-4xl lg:text-5xl mb-6 leading-tight">Waarom kiezen <br>voor Swa Fix?</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-theme-primary w-10 h-10 rounded-full flex items-center justify-center shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-xl mb-1">Echt "No Stress"</h4>
+                                <p class="text-white/80">Geen moeilijke taal. Ik leg in mensentaal uit wat ik doe, zodat jij het perfect begrijpt.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-theme-primary w-10 h-10 rounded-full flex items-center justify-center shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-xl mb-1">Persoonlijk & Snel</h4>
+                                <p class="text-white/80">Jij bent geen nummer. Je hebt direct contact met mij en ik streef ernaar je zo snel mogelijk te helpen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-5/12 z-10 flex justify-center">
+                    <!-- SWA FIX Logo -->
+                    <div class="relative w-64 h-64 rounded-full shadow-2xl overflow-hidden border-4 border-white/20 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <img src="assets/swafix_logo.png" alt="SWA FIX Logo - IT Ondersteuning, Laptops & Smart Home" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Sectie -->
+    <section id="contact" class="py-24 relative z-10">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-black text-4xl lg:text-5xl text-theme-dark mb-4">Laten we het oplossen.</h2>
+                <p class="text-lg text-theme-dark/70">Stuur een berichtje en we nemen snel contact met je op.</p>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-soft border border-theme-light max-w-4xl mx-auto relative">
+                <!-- Kleine blob voor formulier deco -->
+                <div class="absolute -right-6 -top-6 w-24 h-24 bg-theme-primary/10 rounded-full blur-xl -z-10"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                    
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-3">
+                        <h3 class="font-heading font-bold text-2xl text-theme-dark mb-6">Stuur een bericht</h3>
+                        <form onsubmit="event.preventDefault(); alert('Bedankt! Dit is een demo.');" class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block font-heading font-bold text-theme-dark text-sm mb-2">Naam *</label>
+                                    <input type="text" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="Jouw naam" required>
+                                </div>
+                                <div>
+                                    <label class="block font-heading font-bold text-theme-dark text-sm mb-2">E-mail *</label>
+                                    <input type="email" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="jouw@email.be" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block font-heading font-bold text-theme-dark text-sm mb-2">Telefoon *</label>
+                                <input type="tel" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="+32 400 00 00 00" required>
+                            </div>
+
+                            <!-- Geselecteerde Diensten Tags -->
+                            <div id="contact-selected-tags-box" class="p-4 bg-theme-base/60 rounded-xl border border-theme-light">
+                                <span class="block text-xs font-bold uppercase tracking-wider text-theme-secondary mb-2">Geselecteerde Diensten & Richtprijs:</span>
+                                <div id="contact-tags-list" class="flex flex-wrap gap-2 items-center min-h-[28px]">
+                                    <span class="text-xs text-theme-dark/50 italic">Geen specifieke dienst geselecteerd (kies optioneel in de calculator boven)</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block font-heading font-bold text-theme-dark text-sm mb-2">Bericht *</label>
+                                <textarea rows="4" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow resize-none" placeholder="Waarmee kan ik helpen?" required></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-theme-primary hover:bg-[#F26A4A] text-white font-heading font-bold text-lg py-4 rounded-xl transition-transform hover:-translate-y-1 shadow-lg flex justify-center items-center gap-2">
+                                Verzenden
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="lg:col-span-2 bg-theme-dark text-white rounded-3xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden">
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-theme-secondary/20 rounded-full blur-2xl"></div>
+                        
+                        <div class="mb-8">
+                            <h3 class="font-heading font-black text-3xl tracking-widest text-theme-primary mb-2 uppercase">Contact</h3>
+                            <div class="w-12 h-1 bg-white rounded-full"></div>
+                        </div>
+
+                        <div class="space-y-6 relative z-10">
+                            <div>
+                                <p class="font-heading font-bold text-lg mb-1">SWA FIX</p>
+                                <p class="text-white/70 whitespace-nowrap">Winkelstraat 37/A1<br>2890 Puurs-Sint-Amands</p>
+                                
+                                <div class="mt-4 pt-3 border-t border-white/10">
+                                    <span class="block text-xs font-bold uppercase tracking-wider text-theme-primary mb-1">Actief in de regio:</span>
+                                    <p class="text-xs text-white/70 leading-relaxed">Puurs-Sint-Amands, Bornem, Buggenhout & Dendermonde</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 border-t border-white/10">
+                                <a href="mailto:info@swafix.be" class="flex items-center gap-3 text-white hover:text-theme-primary transition-colors mb-3">
+                                    <svg class="w-5 h-5 text-theme-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    info@swafix.be
+                                </a>
+                                <a href="tel:+32479851164" class="flex items-center gap-3 text-white hover:text-theme-primary transition-colors">
+                                    <svg class="w-5 h-5 text-theme-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                    +32 479 85 11 64
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-theme-dark pt-16 pb-8 text-white/60 relative z-10 border-t-8 border-theme-secondary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-theme-primary rounded-lg rotate-3 flex items-center justify-center">
+                        <span class="font-heading font-bold text-white text-xs">SF</span>
+                    </div>
+                    <span class="font-heading font-bold text-xl text-white">Swa Fix</span>
+                </div>
+                
+                <div class="flex gap-6 font-medium text-sm">
+                    <a href="#home" class="hover:text-white transition-colors">Home</a>
+                    <a href="#diensten" class="hover:text-white transition-colors">Diensten</a>
+                    <a href="#waarom" class="hover:text-white transition-colors">Waarom ons?</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm gap-2">
+                <p>&copy; <span id="year"></span> Swa Fix. No Stress IT.</p>
+                <p class="text-white/60">Website door SWAFIX</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('py-4', 'py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('py-2', 'py-4');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+
+    <!-- SWAFIX Main Logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>

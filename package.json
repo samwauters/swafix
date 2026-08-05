@@ -1,0 +1,18 @@
+{
+  "name": "swafix-website",
+  "version": "1.0.0",
+  "description": "Officiële SWAFIX Web Applicatie & Technical Services Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve .",
+    "dev": "npx -y serve ."
+  },
+  "keywords": [
+    "swafix",
+    "website",
+    "tech-repair",
+    "smart-home"
+  ],
+  "author": "SWAFIX",
+  "license": "MIT"
+}
