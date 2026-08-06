@@ -218,11 +218,14 @@ function initRepairEstimator() {
     }
 
     // Update contact form tags box
+    const contactTagsBox = document.getElementById('contact-selected-tags-box');
     const contactTagsList = document.getElementById('contact-tags-list');
-    if (contactTagsList) {
+    if (contactTagsBox && contactTagsList) {
       if (selectedItems.length === 0) {
-        contactTagsList.innerHTML = `<span class="text-xs text-theme-dark/50 italic">Geen specifieke dienst geselecteerd (kies optioneel in de calculator boven)</span>`;
+        contactTagsBox.classList.add('hidden');
+        contactTagsList.innerHTML = '';
       } else {
+        contactTagsBox.classList.remove('hidden');
         const itemTags = selectedItems.map(item => `
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-primary/10 text-theme-dark border border-theme-primary/30 font-medium text-xs">
             <span>${item.label}</span>
