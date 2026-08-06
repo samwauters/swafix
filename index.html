@@ -666,8 +666,8 @@
                     <!-- Contact Form -->
                     <div class="lg:col-span-3">
                         <h3 class="font-heading font-bold text-2xl text-theme-dark mb-6">Stuur een bericht</h3>
-                        <form id="contact-form" class="space-y-5">
-                            <input type="hidden" name="access_key" value="25e05ff6-6999-4b31-b8f1-825ad3fe074a">
+                        <form id="contact-form" onsubmit="return handleContactSubmit(event)" class="space-y-5">
+                            <input type="hidden" name="access_key" value="29c402c5-c9c5-4b00-a710-baeed1a96435">
                             <input type="hidden" name="subject" value="Nieuwe aanvraag via SWA FIX website">
                             <input type="hidden" name="from_name" value="SWA FIX Contactformulier">
                             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">

@@ -408,59 +408,65 @@ function initSmoothScroll() {
 }
 
 /* 8. Web3Forms Live Contact Form Handler */
-function initContactForm() {
+window.handleContactSubmit = function(e) {
+  if (e) e.preventDefault();
+
   const form = document.getElementById('contact-form');
   const statusBox = document.getElementById('contact-form-status');
   const submitBtn = document.getElementById('contact-submit-btn');
 
-  if (!form || !submitBtn) return;
+  if (!form || !submitBtn) return false;
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+  const originalBtnContent = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `<span>Bezig met verzenden...</span>`;
 
-    const originalBtnContent = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `<span>Bezig met verzenden...</span>`;
+  if (statusBox) {
+    statusBox.className = 'hidden p-4 rounded-xl text-center font-bold text-sm mb-4';
+  }
 
-    if (statusBox) {
-      statusBox.className = 'hidden p-4 rounded-xl text-center font-bold text-sm';
-    }
+  const formData = new FormData(form);
 
-    const formData = new FormData(form);
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    })
-    .then(async (response) => {
-      const json = await response.json();
-      if (response.status === 200) {
-        if (statusBox) {
-          statusBox.textContent = '✅ Bedankt! Je bericht is succesvol verzonden. SWA FIX neemt snel contact met je op.';
-          statusBox.classList.remove('hidden');
-          statusBox.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300');
-        }
-        form.reset();
-        const contactTagsBox = document.getElementById('contact-selected-tags-box');
-        if (contactTagsBox) contactTagsBox.classList.add('hidden');
-      } else {
-        if (statusBox) {
-          statusBox.textContent = `⚠️ ${json.message || 'Er ging iets mis. Probeer het opnieuw.'}`;
-          statusBox.classList.remove('hidden');
-          statusBox.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
-        }
-      }
-    })
-    .catch(() => {
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+  })
+  .then(async (response) => {
+    const json = await response.json();
+    console.log('Web3Forms response:', json);
+    if (json.success) {
       if (statusBox) {
-        statusBox.textContent = '⚠️ Er is een netwerkfout opgetreden. Probeer het opnieuw of bel direct op +32 479 85 11 64.';
+        statusBox.textContent = '✅ Bedankt! Je bericht is succesvol verzonden. SWA FIX neemt snel contact met je op.';
         statusBox.classList.remove('hidden');
-        statusBox.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
+        statusBox.className = 'p-4 rounded-xl text-center font-bold text-sm bg-emerald-100 text-emerald-800 border border-emerald-300 mb-4';
       }
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalBtnContent;
-    });
+      form.reset();
+      const contactTagsBox = document.getElementById('contact-selected-tags-box');
+      if (contactTagsBox) contactTagsBox.classList.add('hidden');
+    } else {
+      if (statusBox) {
+        statusBox.textContent = `⚠️ ${json.message || 'Er ging iets mis. Controleer je gegevens.'}`;
+        statusBox.classList.remove('hidden');
+        statusBox.className = 'p-4 rounded-xl text-center font-bold text-sm bg-red-100 text-red-800 border border-red-300 mb-4';
+      }
+    }
+  })
+  .catch((err) => {
+    console.error('Web3Forms error:', err);
+    if (statusBox) {
+      statusBox.textContent = '⚠️ Er is een fout opgetreden bij het verzenden. Probeer opnieuw of bel direct op +32 479 85 11 64.';
+      statusBox.classList.remove('hidden');
+      statusBox.className = 'p-4 rounded-xl text-center font-bold text-sm bg-red-100 text-red-800 border border-red-300 mb-4';
+    }
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnContent;
   });
+
+  return false;
+};
+
+function initContactForm() {
+  // Attached directly via onsubmit="return handleContactSubmit(event)"
 }
