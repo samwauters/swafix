@@ -119,7 +119,7 @@ function initRepairEstimator() {
     { id: 'dh_home', cat: 'digihulp', catName: 'Digitale Hulp aan Huis', label: 'Digitale hulp aan huis (computer, gsm, TV)', price: 55, isHourly: true }
   ];
 
-  const selectedIds = new Set(['pc_install']); // Standaard geselecteerd
+  const selectedIds = new Set(); // Geen standaard selectie, start op €0
 
   const speedMultipliers = {
     standard: { factor: 1.0, duration: 'Binnen 5 werkdagen' },
