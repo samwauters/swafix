@@ -10,6 +10,7 @@ function initAll() {
   initFAQAccordion();
   initBookingModal();
   initSmoothScroll();
+  initContactForm();
 }
 
 if (document.readyState === 'loading') {
@@ -256,6 +257,14 @@ function initRepairEstimator() {
       }
     }
 
+    // Sync to hidden form input
+    const hiddenServicesInput = document.getElementById('contact-selected-services-input');
+    if (hiddenServicesInput) {
+      hiddenServicesInput.value = selectedItems.length > 0 
+        ? selectedItems.map(i => `${i.label} (${i.isHourly ? `€${i.price}/u` : `€${i.price}`})`).join(', ') + ` | Totaal: ${priceText} (${speedData.duration})`
+        : '';
+    }
+
     priceDisplay.textContent = priceText;
     if (timeDisplay) timeDisplay.textContent = speedData.duration;
 
@@ -394,6 +403,64 @@ function initSmoothScroll() {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
       }
+    });
+  });
+}
+
+/* 8. Web3Forms Live Contact Form Handler */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const statusBox = document.getElementById('contact-form-status');
+  const submitBtn = document.getElementById('contact-submit-btn');
+
+  if (!form || !submitBtn) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const originalBtnContent = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span>Bezig met verzenden...</span>`;
+
+    if (statusBox) {
+      statusBox.className = 'hidden p-4 rounded-xl text-center font-bold text-sm';
+    }
+
+    const formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(async (response) => {
+      const json = await response.json();
+      if (response.status === 200) {
+        if (statusBox) {
+          statusBox.textContent = '✅ Bedankt! Je bericht is succesvol verzonden. SWA FIX neemt snel contact met je op.';
+          statusBox.classList.remove('hidden');
+          statusBox.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300');
+        }
+        form.reset();
+        const contactTagsBox = document.getElementById('contact-selected-tags-box');
+        if (contactTagsBox) contactTagsBox.classList.add('hidden');
+      } else {
+        if (statusBox) {
+          statusBox.textContent = `⚠️ ${json.message || 'Er ging iets mis. Probeer het opnieuw.'}`;
+          statusBox.classList.remove('hidden');
+          statusBox.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
+        }
+      }
+    })
+    .catch(() => {
+      if (statusBox) {
+        statusBox.textContent = '⚠️ Er is een netwerkfout opgetreden. Probeer het opnieuw of bel direct op +32 479 85 11 64.';
+        statusBox.classList.remove('hidden');
+        statusBox.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
+      }
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnContent;
     });
   });
 }

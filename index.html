@@ -666,21 +666,26 @@
                     <!-- Contact Form -->
                     <div class="lg:col-span-3">
                         <h3 class="font-heading font-bold text-2xl text-theme-dark mb-6">Stuur een bericht</h3>
-                        <form onsubmit="event.preventDefault(); alert('Bedankt! Dit is een demo.');" class="space-y-5">
+                        <form id="contact-form" class="space-y-5">
+                            <input type="hidden" name="access_key" value="25e05ff6-6999-4b31-b8f1-825ad3fe074a">
+                            <input type="hidden" name="subject" value="Nieuwe aanvraag via SWA FIX website">
+                            <input type="hidden" name="from_name" value="SWA FIX Contactformulier">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
                                     <label class="block font-heading font-bold text-theme-dark text-sm mb-2">Naam *</label>
-                                    <input type="text" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="Jouw naam" required>
+                                    <input type="text" name="name" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="Jouw naam" required>
                                 </div>
                                 <div>
                                     <label class="block font-heading font-bold text-theme-dark text-sm mb-2">E-mail *</label>
-                                    <input type="email" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="jouw@email.be" required>
+                                    <input type="email" name="email" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="jouw@email.be" required>
                                 </div>
                             </div>
                             
                             <div>
                                 <label class="block font-heading font-bold text-theme-dark text-sm mb-2">Telefoon *</label>
-                                <input type="tel" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="+32 400 00 00 00" required>
+                                <input type="tel" name="phone" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow" placeholder="+32 400 00 00 00" required>
                             </div>
 
                             <!-- Geselecteerde Diensten Tags -->
@@ -689,14 +694,17 @@
                                 <div id="contact-tags-list" class="flex flex-wrap gap-2 items-center min-h-[28px]">
                                 </div>
                             </div>
+                            <input type="hidden" name="selected_services" id="contact-selected-services-input" value="">
 
                             <div>
                                 <label class="block font-heading font-bold text-theme-dark text-sm mb-2">Bericht *</label>
-                                <textarea rows="4" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow resize-none" placeholder="Waarmee kan ik helpen?" required></textarea>
+                                <textarea name="message" rows="4" class="w-full bg-theme-base border-none rounded-xl px-4 py-3 text-theme-dark focus:ring-2 focus:ring-theme-secondary outline-none transition-shadow resize-none" placeholder="Waarmee kan ik helpen?" required></textarea>
                             </div>
 
-                            <button type="submit" class="w-full bg-theme-primary hover:bg-[#F26A4A] text-white font-heading font-bold text-lg py-4 rounded-xl transition-transform hover:-translate-y-1 shadow-lg flex justify-center items-center gap-2">
-                                Verzenden
+                            <div id="contact-form-status" class="hidden p-4 rounded-xl text-center font-bold text-sm"></div>
+
+                            <button id="contact-submit-btn" type="submit" class="w-full bg-theme-primary hover:bg-[#F26A4A] text-white font-heading font-bold text-lg py-4 rounded-xl transition-all hover:-translate-y-1 shadow-lg flex justify-center items-center gap-2">
+                                <span>Verzenden</span>
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                             </button>
                         </form>
